@@ -1,1 +1,1 @@
-from .example import get_book_price
+from .apis import get_book_price
