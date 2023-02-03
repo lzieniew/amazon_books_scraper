@@ -7,6 +7,17 @@ from src.amazon_books_scraper.enums import BookType
 CURRENCY = '$'
 
 
+def _extract_price_from_product_string(product_string: str, book_type:BookType) -> str:
+    match book_type:
+        case BookType.EBOOK:
+            price = re.search(f'Kindle\s+(\{CURRENCY}\d+\.\d+)', product_string)
+            return price.group(0).split(' ')[1]
+        case BookType.AUDIOBOOK:
+            raise NotImplementedError
+        case BookType.UNKNOWN:
+            raise NotImplementedError
+
+
 def _product_string_to_product_info(product_string: str, book_type: BookType) -> dict:
     review_regexp = re.compile('[0-9].[0-9] out of 5 stars')
     regexp = review_regexp.search(product_string)
@@ -17,7 +28,8 @@ def _product_string_to_product_info(product_string: str, book_type: BookType) ->
     # price = product_string.split(CURRENCY)[-2]
     price_regexp = re.compile('\\$[0-9]+.[0-9]+')
     try:
-        price = price_regexp.search(product_string).group(0)
+        # price = price_regexp.search(product_string).group(0)
+        price = _extract_price_from_product_string(product_string, book_type)
     except Exception as ex:
         print(ex)
         price = ''
