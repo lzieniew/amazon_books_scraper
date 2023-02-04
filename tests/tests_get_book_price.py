@@ -1,4 +1,5 @@
 from src.amazon_books_scraper.apis import get_book_price
+from src.amazon_books_scraper.enums import BookType
 
 
 def test_get_book_price_simple():
@@ -22,3 +23,9 @@ def test_get_book_price_kindle_not_first_in_string():
     publisher = 'Adams Media'
     price = get_book_price(human_name=book_name, author=author, publisher=publisher)
     assert price['price'] == '$10.99'
+
+def test_get_book_price_audible_audiobook():
+    book_name = 'The Shining'
+    author = 'Stephen King'
+    price = get_book_price(human_name=book_name, author=author, book_type=BookType.AUDIOBOOK)
+    assert price['price'] == '$20.42'

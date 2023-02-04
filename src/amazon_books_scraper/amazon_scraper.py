@@ -13,7 +13,15 @@ def _extract_price_from_product_string(product_string: str, book_type:BookType) 
             price = re.search(f'Kindle\s+(\{CURRENCY}\d+\.\d+)', product_string)
             return price.group(0).split(' ')[1]
         case BookType.AUDIOBOOK:
-            raise NotImplementedError
+            # pattern = f'Audible Audiobook.*?\{CURRENCY}(\d+\.\d+).*?(?=\{CURRENCY}0\.00|{CURRENCY})'
+            # pattern = r'Audible Audiobook.*?\$(\d+\.\d+).*?(?!\$0\.00)(?=\$|$)'
+            # pattern = r'Audible Audiobook.*\$(\d+\.\d+)\$'
+            pattern = f'Audible Audiobook \{CURRENCY}0\.00\{CURRENCY}0\.00[^\{CURRENCY}\d]*\{CURRENCY}(\d+\.\d+)'
+            match = re.search(pattern, product_string)
+            if match:
+                return CURRENCY + match.group(1)
+            else:
+                return ''
         case BookType.UNKNOWN:
             raise NotImplementedError
 
