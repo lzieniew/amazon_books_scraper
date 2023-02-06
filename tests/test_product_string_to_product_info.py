@@ -13,4 +13,3 @@ def test_the_shining_audiobook():
 def test_the_shining_ebook():
     ebook_info = _product_string_to_product_info(THE_SHINING_PRODUCT_STRING, BookType.EBOOK)
     assert ebook_info['price'] == '$9.99'
-

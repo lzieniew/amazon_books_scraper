@@ -38,5 +38,10 @@ def test_get_not_found_book():
     price = get_book_price(human_name=book_name, publisher=publisher, book_type=BookType.EBOOK)
     assert price['price'] == ''
 
-def test_get_not_found_book():
-    pass
+
+def test_get_not_found_audiobook():
+    book_name = 'Bible 101'
+    author = 'Edward D. Gravely'
+    publisher = 'Adams Media'
+    price = get_book_price(human_name=book_name, author=author, publisher=publisher, book_type=BookType.AUDIOBOOK)
+    assert price['price'] == ''
