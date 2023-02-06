@@ -13,3 +13,10 @@ def test_the_shining_audiobook():
 def test_the_shining_ebook():
     ebook_info = _product_string_to_product_info(THE_SHINING_PRODUCT_STRING, BookType.EBOOK)
     assert ebook_info['price'] == '$9.99'
+
+
+COMIC_PRODUCT_STRING = 'Girls Vol. 1: Conception  Book 2 of 5: Girls   | by Joshua Luna and Jonathan Luna | Nov 15, 20175.0 out of 5 stars 1  Kindle & Comixology $0.00$0.00  Free with Comixology Unlimited membership Join Now Available instantlyOr $10.99 to buy'
+
+def test_girls_vol1_conception_string():
+    comic_info = _product_string_to_product_info(COMIC_PRODUCT_STRING, BookType.EBOOK)
+    assert comic_info['price'] == '$10.99'

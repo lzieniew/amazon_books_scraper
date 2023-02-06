@@ -11,7 +11,13 @@ def _extract_price_from_product_string(product_string: str, book_type:BookType) 
     match book_type:
         case BookType.EBOOK:
             price = re.search(f'Kindle\s+(\{CURRENCY}\d+\.\d+)', product_string)
-            return price.group(0).split(' ')[1]
+            if price:
+                return price.group(0).split(' ')[1]
+            # maybe comixology with different structure?
+            if not price and 'Comixology' in product_string:
+                price = re.search(r'\$[1-9]\d*\.\d{2}', product_string)
+                return price.group(0)
+            return ''
         case BookType.AUDIOBOOK:
             # pattern = f'Audible Audiobook.*?\{CURRENCY}(\d+\.\d+).*?(?=\{CURRENCY}0\.00|{CURRENCY})'
             # pattern = r'Audible Audiobook.*?\$(\d+\.\d+).*?(?!\$0\.00)(?=\$|$)'

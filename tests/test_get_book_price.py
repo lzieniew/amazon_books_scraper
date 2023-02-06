@@ -52,3 +52,12 @@ def test_get_not_found_audiobook():
     author = 'Deepika M, Vijay Cuddapah, Amitendra Srivastava, Srinivas Mahankali'
     price = get_book_price(human_name=book_name, author=author, book_type=BookType.AUDIOBOOK)
     assert price['price'] == ''
+
+
+@pytest.mark.vcr
+def test_find_comics():
+    book_name = 'Girls Vol. 1: Conception'
+    author = 'Written by: Joshua Luna, Art by: Jonathan Luna'
+    publisher = 'Image Comics'
+    price = get_book_price(human_name=book_name, author=author, publisher=publisher, book_type=BookType.EBOOK)
+    assert price['price'] == '$10.99'
