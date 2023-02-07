@@ -61,3 +61,12 @@ def test_find_comics():
     publisher = 'Image Comics'
     price = get_book_price(human_name=book_name, author=author, publisher=publisher, book_type=BookType.EBOOK)
     assert price['price'] == '$10.99'
+
+
+# @pytest.mark.vcr
+def test_find_comics_strips_unnecessary_words_from_author():
+    book_name = 'The silver Coin Vol. 1'
+    author = 'Written by: Ed Brisson, Jeff Lemire, Kelly Thompson, Michael Walsh, Chip Zdarsky, Art by: Michael Walsh'
+    publisher = 'Image Comics'
+    price = get_book_price(human_name=book_name, author=author, publisher=publisher, book_type=BookType.EBOOK)
+    assert price['price'] == '$12.99'

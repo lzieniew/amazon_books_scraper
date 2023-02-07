@@ -4,24 +4,24 @@ from bs4 import BeautifulSoup
 
 from src.amazon_books_scraper.enums import BookType
 
+
 CURRENCY = '$'
 
 
 def _extract_price_from_product_string(product_string: str, book_type:BookType) -> str:
     match book_type:
         case BookType.EBOOK:
-            price = re.search(f'Kindle\s+(\{CURRENCY}\d+\.\d+)', product_string)
+            # price = re.search(f'Kindle.+(\{CURRENCY}\d+\.\d+)', product_string)
+            price = re.search(r'\bKindle.*\$\d+\.\d{2}', product_string)
+            # price = re.search(r'\bKindle.*\$(\d+\.\d{2})', product_string)
             if price:
-                return price.group(0).split(' ')[1]
+                return '$' + price.group(1)
             # maybe comixology with different structure?
             if not price and 'Comixology' in product_string:
                 price = re.search(r'\$[1-9]\d*\.\d{2}', product_string)
                 return price.group(0)
             return ''
         case BookType.AUDIOBOOK:
-            # pattern = f'Audible Audiobook.*?\{CURRENCY}(\d+\.\d+).*?(?=\{CURRENCY}0\.00|{CURRENCY})'
-            # pattern = r'Audible Audiobook.*?\$(\d+\.\d+).*?(?!\$0\.00)(?=\$|$)'
-            # pattern = r'Audible Audiobook.*\$(\d+\.\d+)\$'
             pattern = f'Audible Audiobook \{CURRENCY}0\.00\{CURRENCY}0\.00[^\{CURRENCY}\d]*\{CURRENCY}(\d+\.\d+)'
             match = re.search(pattern, product_string)
             if match:
