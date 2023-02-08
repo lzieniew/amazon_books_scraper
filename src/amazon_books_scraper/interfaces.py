@@ -6,7 +6,7 @@ from src.amazon_books_scraper.enums import BookType
 AMAZON_SEARCH_URL = 'https://www.amazon.com/s'
 
 
-def get_amazon_product_info(search_name: str, book_type: BookType) -> dict:
+def get_amazon_product_info(search_name: str, book_type: BookType, human_name: str) -> dict:
     params = {
         'k': search_name,
         'rh': 'n%3A283155',
@@ -18,5 +18,5 @@ def get_amazon_product_info(search_name: str, book_type: BookType) -> dict:
 
     }
     response = requests.get(url=AMAZON_SEARCH_URL, params=params, headers=headers)
-    product_info = scrape_product_info_from_amazon_search(response, book_type)
+    product_info = scrape_product_info_from_amazon_search(response, book_type, human_name)
     return product_info

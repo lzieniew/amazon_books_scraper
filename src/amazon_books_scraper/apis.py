@@ -10,4 +10,4 @@ def get_book_price(human_name, author='', publisher='', book_type=BookType.EBOOK
         full_name += author_str
     else:
         full_name += publisher
-    return get_amazon_product_info(full_name, book_type=book_type)
+    return get_amazon_product_info(full_name, book_type=book_type, human_name=human_name)

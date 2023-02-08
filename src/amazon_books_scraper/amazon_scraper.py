@@ -1,6 +1,6 @@
 import re
 
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, ResultSet, Tag
 
 from src.amazon_books_scraper.enums import BookType
 
@@ -8,19 +8,26 @@ from src.amazon_books_scraper.enums import BookType
 CURRENCY = '$'
 
 
+def _ebook_extract_price(product_string: str) -> str:
+    # standard kindle ebook
+    price = re.search(f'Kindle\s+(\{CURRENCY}\d+\.\d+)', product_string)
+    if price:
+        return price.group(0).split(' ')[1]
+    # then maybe kindle & comixology?
+    product_string_lower = product_string.lower()
+    if 'kindle' in product_string_lower:
+        product_string_after_kindle = product_string.lower().split('kindle')[1]
+        price = re.search(r'\$(?!0\.00)\d{1,3}\.\d{2}', product_string_after_kindle)
+        if price and 'kindle' in product_string.lower():
+            return price.group(0)
+    # if not then don't know
+    return ''
+
+
 def _extract_price_from_product_string(product_string: str, book_type:BookType) -> str:
     match book_type:
         case BookType.EBOOK:
-            # price = re.search(f'Kindle.+(\{CURRENCY}\d+\.\d+)', product_string)
-            price = re.search(r'\bKindle.*\$\d+\.\d{2}', product_string)
-            # price = re.search(r'\bKindle.*\$(\d+\.\d{2})', product_string)
-            if price:
-                return '$' + price.group(1)
-            # maybe comixology with different structure?
-            if not price and 'Comixology' in product_string:
-                price = re.search(r'\$[1-9]\d*\.\d{2}', product_string)
-                return price.group(0)
-            return ''
+            return _ebook_extract_price(product_string)
         case BookType.AUDIOBOOK:
             pattern = f'Audible Audiobook \{CURRENCY}0\.00\{CURRENCY}0\.00[^\{CURRENCY}\d]*\{CURRENCY}(\d+\.\d+)'
             match = re.search(pattern, product_string)
@@ -53,12 +60,31 @@ def _product_string_to_product_info(product_string: str, book_type: BookType) ->
     )
 
 
-def scrape_product_info_from_amazon_search(response, book_type: BookType) -> dict:
+def _fuzzy_check_if_correct_item(product_string, human_name):
+    human_name_no_punctuation = re.sub("[^\w\s]", "", human_name)
+    correct = True
+    for word in human_name_no_punctuation.split():
+        if len(word) > 3 and word.lower() not in product_string.lower():
+            correct = False
+    return correct
+
+
+def _get_item_from_search_results(results: ResultSet, human_name) -> Tag | None:
+    data_index_count = 1
+    for result in results:
+        if CURRENCY in result.text and int(result.attrs['data-index']) == data_index_count and _fuzzy_check_if_correct_item(result.text, human_name):
+            return result
+        data_index_count += 1
+    return None
+
+
+def scrape_product_info_from_amazon_search(response, book_type: BookType, human_name: str) -> dict:
     soup = BeautifulSoup(response.text, 'html.parser')
     # link = soup.find('div', id='search_resultsRows').find('a').attrs['href']
     if soup.findAll(text='No results for'):
         return dict()
-    item_info = soup.findAll('div', attrs={'data-component-type': 's-search-result'})[0]
+    result_set = soup.findAll('div', attrs={'data-component-type': 's-search-result'})
+    item_info = _get_item_from_search_results(result_set, human_name)
     product_id = item_info.attrs['data-asin']
     product_string = item_info.text
     product_info = _product_string_to_product_info(product_string, book_type=book_type)
