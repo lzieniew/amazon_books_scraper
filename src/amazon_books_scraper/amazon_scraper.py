@@ -1,6 +1,7 @@
 import re
 
 from bs4 import BeautifulSoup, ResultSet, Tag
+from fuzzywuzzy import fuzz
 
 from src.amazon_books_scraper.enums import BookType
 
@@ -60,11 +61,19 @@ def _product_string_to_product_info(product_string: str, book_type: BookType) ->
     )
 
 
+def _fuzzy_compare(word, product_string) -> bool:
+    match = False
+    for ps_word in product_string.split():
+        if fuzz.ratio(word, ps_word) > 85:
+            match = True
+    return match
+
+
 def _fuzzy_check_if_correct_item(product_string, human_name):
     human_name_no_punctuation = re.sub("[^\w\s]", "", human_name)
     correct = True
     for word in human_name_no_punctuation.split():
-        if len(word) > 3 and word.lower() not in product_string.lower():
+        if len(word) > 3 and not _fuzzy_compare(word.lower(), product_string.lower()):
             correct = False
     return correct
 
