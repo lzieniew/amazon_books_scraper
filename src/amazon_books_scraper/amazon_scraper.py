@@ -79,20 +79,33 @@ def _fuzzy_check_if_correct_item(product_string, human_name):
 
 
 def _get_item_from_search_results(results: ResultSet, human_name) -> Tag | None:
-    data_index_count = 1
     for result in results:
-        if CURRENCY in result.text and int(result.attrs['data-index']) == data_index_count and _fuzzy_check_if_correct_item(result.text, human_name):
+        if (CURRENCY in result.text
+            and _fuzzy_check_if_correct_item(result.text, human_name)
+        ):
             return result
-        data_index_count += 1
     return None
 
+
+def _get_result_set(soup):
+    # return soup.findAll('div', attrs={'data-component-type': 's-search-result'})
+    # s-result-item is a component which may or may not contain one or multiple s-search-result
+    # I want to search results only from first s-result-item that contains at least one
+    # because next s-result-items contain less matching results
+    result_items = soup.findAll('div', attrs={'class': 's-result-item'})
+    for item in result_items:
+        if item.findNext('div', attrs={'data-component-type': 's-search-result'}):
+            return soup.findAll('div', attrs={'data-component-type': 's-search-result'})
+    return None
 
 def scrape_product_info_from_amazon_search(response, book_type: BookType, human_name: str) -> dict:
     soup = BeautifulSoup(response.text, 'html.parser')
     # link = soup.find('div', id='search_resultsRows').find('a').attrs['href']
     if soup.findAll(text='No results for'):
         return dict()
-    result_set = soup.findAll('div', attrs={'data-component-type': 's-search-result'})
+    result_set = _get_result_set(soup)
+    if not result_set:
+        return {}
     item_info = _get_item_from_search_results(result_set, human_name)
     product_id = item_info.attrs['data-asin']
     product_string = item_info.text
