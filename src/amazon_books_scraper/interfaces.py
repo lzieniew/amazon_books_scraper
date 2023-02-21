@@ -19,5 +19,6 @@ def get_amazon_product_info(search_name: str, book_type: BookType, human_name: s
 
     }
     response = requests.get(url=AMAZON_SEARCH_URL, params=params, headers=headers)
+    print(f'got amazon response with code {response.status_code}')
     product_info = scrape_product_info_from_amazon_search(response, book_type, human_name)
     return product_info
