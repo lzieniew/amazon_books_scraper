@@ -35,7 +35,7 @@ if __name__ == '__main__':
         except Exception as ex:
             fail_count += 1
             print(f'price not found for {book}')
-        sleep(10)
+        sleep(1)
     all_fetched_data += f'\nfor {len(books)} the stats are:'
     all_fetched_data += f'success: {success_count + success_but_no_price}\n'
     all_fetched_data += f'success, but no price: {success_but_no_price}\n'
