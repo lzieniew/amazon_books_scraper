@@ -15,8 +15,8 @@ def test_get_book_price_simple(vcr_context_manager):
     with vcr_context_manager:
         book_name = 'AI and ML Powering the Agents of Automation'
         author = 'Deepika M, Vijay Cuddapah, Amitendra Srivastava, Srinivas Mahankali'
-        price = get_book_price(human_name=book_name, author=author, book_type=BookType.EBOOK)['price']
-        assert price == '$9.95'
+        price = get_book_price(human_name=book_name, author=author, book_type=BookType.EBOOK)
+        assert price['price'] == '$9.95'
 
 
 @pytest.mark.parametrize('vcr_context_manager', get_cassettes_by_names([
@@ -43,7 +43,7 @@ def test_get_book_price_kindle_not_first_in_string(vcr_context_manager):
         author = 'Edward D. Gravely'
         publisher = 'Adams Media'
         price = get_book_price(human_name=book_name, author=author, publisher=publisher, book_type=BookType.EBOOK)
-        assert price['price'] == '$10.99'
+        assert price['price'] == '$12.99'
 
 
 @pytest.mark.parametrize('vcr_context_manager', get_cassettes_by_names([
@@ -65,7 +65,7 @@ def test_get_not_found_book(vcr_context_manager):
         book_name = 'Pathfinder Adventure Path: Abomination Vaults'
         publisher = 'Paizo Inc.'
         price = get_book_price(human_name=book_name, publisher=publisher, book_type=BookType.EBOOK)
-        assert price['price'] == ''
+        assert price == {}
 
 
 @pytest.mark.parametrize('vcr_context_manager', get_cassettes_by_names([

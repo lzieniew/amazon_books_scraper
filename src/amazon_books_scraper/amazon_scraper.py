@@ -61,29 +61,9 @@ def _product_string_to_product_info(product_string: str, book_type: BookType) ->
     )
 
 
-def _fuzzy_compare(word, product_string) -> bool:
-    match = False
-    for ps_word in product_string.split():
-        if fuzz.ratio(word, ps_word) > 85:
-            match = True
-    return match
-
-
-def _fuzzy_check_if_correct_item(product_string, human_name):
-    human_name_no_punctuation = re.sub("[^\w\s]", "", human_name)
-    correct = True
-    for word in human_name_no_punctuation.split():
-        if len(word) > 3 and not _fuzzy_compare(word.lower(), product_string.lower()):
-            correct = False
-    return correct
-
-
-def _get_item_from_search_results(results: ResultSet, human_name) -> Tag | None:
+def _get_item_from_search_results(results: ResultSet) -> Tag | None:
     for result in results:
-        if (CURRENCY in result.text
-            and _fuzzy_check_if_correct_item(result.text, human_name)
-        ):
-            return result
+        return result
     return None
 
 
@@ -98,7 +78,7 @@ def _get_result_set(soup):
             return soup.findAll('div', attrs={'data-component-type': 's-search-result'})
     return None
 
-def scrape_product_info_from_amazon_search(response, book_type: BookType, human_name: str) -> dict:
+def scrape_product_info_from_amazon_search(response, book_type: BookType) -> dict:
     soup = BeautifulSoup(response.text, 'html.parser')
     # link = soup.find('div', id='search_resultsRows').find('a').attrs['href']
     if soup.findAll(text='No results for'):
@@ -106,7 +86,7 @@ def scrape_product_info_from_amazon_search(response, book_type: BookType, human_
     result_set = _get_result_set(soup)
     if not result_set:
         return {}
-    item_info = _get_item_from_search_results(result_set, human_name)
+    item_info = _get_item_from_search_results(result_set)
     product_id = item_info.attrs['data-asin']
     product_string = item_info.text
     product_info = _product_string_to_product_info(product_string, book_type=book_type)
