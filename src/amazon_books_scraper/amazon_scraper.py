@@ -78,8 +78,8 @@ def _get_result_set(soup):
             return soup.findAll('div', attrs={'data-component-type': 's-search-result'})
     return None
 
-def scrape_product_info_from_amazon_search(response, book_type: BookType) -> dict:
-    soup = BeautifulSoup(response.text, 'html.parser')
+def scrape_product_info_from_amazon_search(response_html, book_type: BookType) -> dict:
+    soup = BeautifulSoup(response_html, 'html.parser')
     # link = soup.find('div', id='search_resultsRows').find('a').attrs['href']
     if soup.findAll(text='No results for'):
         return dict()

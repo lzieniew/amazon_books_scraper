@@ -7,3 +7,4 @@ python-Levenshtein~=0.20.9
 pytest~=7.2.1
 pytest-xdist~=3.1.0
 pytest-recording==0.12.1
+seleniumbase==4.13.7
