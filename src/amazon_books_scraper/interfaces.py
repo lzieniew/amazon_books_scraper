@@ -43,7 +43,7 @@ def get_amazon_product_info(isbn: str, book_type: BookType) -> dict:
     # make the request and wait for the page to load
     driver.get(url)
     driver.implicitly_wait(10)
-    time.sleep(0.5)
+    # time.sleep(0.5)
 
     # extract the page source
     page_source = driver.page_source

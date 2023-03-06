@@ -21,6 +21,11 @@ def _ebook_extract_price(product_string: str) -> str:
         price = re.search(r'\$(?!0\.00)\d{1,3}\.\d{2}', product_string_after_kindle)
         if price and 'kindle' in product_string.lower():
             return price.group(0)
+    if 'etextbook' in product_string_lower:
+        product_string_after_kindle = product_string.lower().split('etextbook')[1]
+        price = re.search(r'\$(?!0\.00)\d{1,3}\.\d{2}', product_string_after_kindle)
+        if price and 'etextbook' in product_string_lower:
+            return price.group(0)
     # if not then don't know
     return ''
 

@@ -12,11 +12,11 @@ def get_books():
 
 def save_report(report):
     with open('stats.txt', 'w') as f:
-        f.write(json.dumps(report))
+        f.write(report)
 
 
 if __name__ == '__main__':
-    all_fetched_data = []
+    all_fetched_data = ''
     books_count = 0
     success_count = 0
     success_but_no_price = 0
@@ -36,7 +36,7 @@ if __name__ == '__main__':
             fail_count += 1
             print(f'price not found for {book}')
         sleep(5)
-    all_fetched_data += f'\nfor {len(books)} the stats are:'
+    all_fetched_data += f'\nfor {len(books)} book the stats are:\n'
     all_fetched_data += f'success: {success_count + success_but_no_price}\n'
     all_fetched_data += f'success, but no price: {success_but_no_price}\n'
     all_fetched_data += f'success with price: {success_count}\n'

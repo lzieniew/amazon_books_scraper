@@ -67,3 +67,15 @@ def test_find_comics_strips_unnecessary_words_from_author():
     publisher = 'Image Comics'
     price = get_book_price(human_name=book_name, author=author, publisher=publisher, book_type=BookType.EBOOK)
     assert price['price'] == '$12.99'
+
+
+def test_find_dive_into_systems():
+    book_name = 'Dive Into Systems'
+    price = get_book_price(human_name=book_name)
+    assert price['price'] == '$52.99'
+
+
+def test_etextbook():
+    book_name = 'Write Great Code, Volume 1: Understanding the Machine'
+    price = get_book_price(book_name)
+    assert price['price'] == '$29.99'
