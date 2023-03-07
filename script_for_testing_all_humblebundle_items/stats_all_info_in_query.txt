@@ -1,0 +1,70 @@
+price {'id': '1718501366', 'review_score': '5.0 out of 5 stars', 'price': '$52.99'} found for {'human_name': 'Dive Into Systems', 'author': 'Suzanne J. Matthews Tia Newhall Kevin C. Webb ', 'publisher': 'No Starch Press '}
+price {'id': '1593271190', 'review_score': '4.4 out of 5 stars', 'price': '$26.99'} found for {'human_name': 'Code Craft', 'author': 'Pete Goodliffe ', 'publisher': 'No Starch Press '}
+price {'id': '1593274351', 'review_score': '4.7 out of 5 stars', 'price': '$29.99'} found for {'human_name': 'Learn you some Erlang for Great Good!', 'author': 'Fred Hebert ', 'publisher': 'No Starch Press '}
+price {'id': '1718501048', 'review_score': '4.6 out of 5 stars', 'price': '$29.99'} found for {'human_name': 'Effective C', 'author': 'Robert C. Seacord ', 'publisher': 'No Starch Press '}
+price {'id': '1718502184', 'review_score': '4.6 out of 5 stars', 'price': '$17.99'} found for {'human_name': 'The Art of Clean Code', 'author': 'Christian Mayer ', 'publisher': 'No Starch Press '}
+price {'id': '1718500807', 'review_score': '4.7 out of 5 stars', 'price': '$29.99'} found for {'human_name': 'Algorithmic Thinking', 'author': 'Daniel Zingaro ', 'publisher': 'No Starch Press '}
+price {} found for {'human_name': 'Write Great Code, Volume 1: Understanding the Machine', 'author': 'Randall Hyde ', 'publisher': 'No Starch Press '}
+price {'id': '1593278888', 'review_score': '4.7 out of 5 stars', 'price': '$35.99'} found for {'human_name': 'C++ Crash Course', 'author': 'Josh Lospinoso ', 'publisher': 'No Starch Press '}
+price {'id': 'B07PZ4DSBD', 'review_score': '4.6 out of 5 stars', 'price': '$35.99'} found for {'human_name': 'Introduction to Computer Organization', 'author': ' Robert G. Plantz ', 'publisher': 'No Starch Press '}
+price {'id': 'B09WJYH4KL', 'review_score': '5.0 out of 5 stars', 'price': '$21.99'} found for {'human_name': 'Data Structures the Fun Way', 'author': 'Jeremy Kubica ', 'publisher': 'No Starch Press '}
+price {} found for {'human_name': 'Electronic Frontier Foundation', 'author': 'www.eff.org ', 'publisher': ''}
+price {'id': '1718500386', 'review_score': '4.9 out of 5 stars', 'price': '$29.99'} found for {'human_name': 'Write Great Code, Volume 2: Thinking Low-Level, Writing High-Level', 'author': 'Randall Hyde ', 'publisher': 'No Starch Press '}
+price {'id': 'B08H177DFB', 'review_score': '4.2 out of 5 stars', 'price': '$42.99'} found for {'human_name': 'How Computers Really Work', 'author': 'Matthew Justice ', 'publisher': 'No Starch Press '}
+price {'id': 'B09BKL34VL', 'review_score': '5.0 out of 5 stars', 'price': '$23.99'} found for {'human_name': 'The Recursive Book of Recursion', 'author': 'Al Sweigart ', 'publisher': 'No Starch Press '}
+price {'id': 'B015P7F92G', 'review_score': '4.6 out of 5 stars', 'price': '$23.99'} found for {'human_name': 'Clojure for the Brave and True', 'author': 'Daniel Higginbotham ', 'publisher': 'No Starch Press '}
+price {} found for {'human_name': 'Write Great Code, Volume 3: Engineering Software', 'author': 'Randall Hyde ', 'publisher': 'No Starch Press '}
+price {'id': '1718500823', 'review_score': '3.9 out of 5 stars', 'price': '$29.99'} found for {'human_name': 'Racket Programming the Fun Way', 'author': 'James W. Stelly ', 'publisher': 'No Starch Press '}
+price {'id': '1593274246', 'review_score': '4.7 out of 5 stars', 'price': '$20.99'} found for {'human_name': 'Think Like a Programmer', 'author': 'V. Anton Spraul ', 'publisher': 'No Starch Press '}
+price {'id': '1593272073', 'review_score': '3.9 out of 5 stars', 'price': '$35.99'} found for {'human_name': 'The Art of 64-Bit Assembly, Volume 1', 'author': 'Randall Hyde ', 'publisher': 'No Starch Press '}
+price {'id': 'B00TZ006SM', 'review_score': '4.7 out of 5 stars', 'price': '$10.99'} found for {'human_name': 'ElfQuest: The Final Quest Volume 4', 'author': 'Richard Pini, Wendy Pini ', 'publisher': 'Dark Horse '}
+price {'id': 'B00TZ006SM', 'review_score': '4.7 out of 5 stars', 'price': '$10.99'} found for {'human_name': 'ElfQuest: The Final Quest Volume 2', 'author': 'Richard Pini, Wendy Pini ', 'publisher': 'Dark Horse '}
+price {} found for {'human_name': 'ElfQuest: The Final Quest Volume 3', 'author': 'Richard Pini, Wendy Pini ', 'publisher': 'Dark Horse '}
+price {} found for {'human_name': "Elfquest: Stargazer's Hunt Volume 1", 'author': 'Richard Pini, Wendy Pini ', 'publisher': 'Dark Horse '}
+price {} found for {'human_name': "ElfQuest: Stargazer's Hunt Volume 2", 'author': 'Richard Pini, Wendy Pini ', 'publisher': 'Dark Horse '}
+price {'id': '150670607X', 'review_score': '4.8 out of 5 stars', 'price': '$12.99'} found for {'human_name': 'The Complete ElfQuest Volume 6', 'author': 'Richard Pini, Wendy Pini ', 'publisher': 'Dark Horse '}
+price {'id': 'B00TZ006SM', 'review_score': '4.7 out of 5 stars', 'price': '$10.99'} found for {'human_name': 'Elfquest: The Final Quest Volume 1', 'author': 'Richard Pini, Wendy Pini ', 'publisher': 'Dark Horse '}
+price {} found for {'human_name': 'The Complete ElfQuest Volume 3', 'author': 'Richard Pini, Wendy Pini ', 'publisher': 'Dark Horse '}
+price {'id': 'B07NTYP4FZ', 'review_score': '4.8 out of 5 stars', 'price': '$12.99'} found for {'human_name': 'The Complete Elfquest Volume 2', 'author': 'Richard Pini, Wendy Pini ', 'publisher': 'Dark Horse '}
+price {} found for {'human_name': 'The Complete Elfquest Volume 1: The Original Quest', 'author': 'Richard Pini, Wendy Pini ', 'publisher': 'Dark Horse '}
+price {'id': 'B07TBXJT3M', 'review_score': '4.8 out of 5 stars', 'price': '$12.99'} found for {'human_name': 'The Complete ElfQuest Volume 7', 'author': 'Richard Pini, Wendy Pini ', 'publisher': 'Dark Horse '}
+price {'id': '1606991663', 'review_score': '4.8 out of 5 stars', 'price': '$24.99'} found for {'human_name': 'The Hero Initiative', 'author': 'www.heroinitiative.org ', 'publisher': ''}
+price {'id': 'B07D23WFYQ', 'review_score': '4.8 out of 5 stars', 'price': '$12.99'} found for {'human_name': 'The Complete ElfQuest Volume 5', 'author': 'Richard Pini, Wendy Pini ', 'publisher': 'Dark Horse '}
+price {'id': 'B07NTYP4FZ', 'review_score': '4.8 out of 5 stars', 'price': '$12.99'} found for {'human_name': 'The Complete ElfQuest Volume 4', 'author': 'Richard Pini, Wendy Pini ', 'publisher': 'Dark Horse '}
+price {} found for {'human_name': 'Fallout: Wasteland Warfare - Terrain Expansion: Parked Vertibird - STL', 'author': '', 'publisher': 'Modiphius '}
+price {} found for {'human_name': 'Fallout: Wasteland Warfare - RPG - The Unexpected Shepherd Part 1- PDF Campaign Book', 'author': '', 'publisher': 'Modiphius '}
+price {} found for {'human_name': 'Fallout: Wasteland Warfare - RPG Expansion Book - PDF', 'author': '', 'publisher': 'Modiphius '}
+price {} found for {'human_name': 'Fallout: Wasteland Warfare - Print and Play: HIGH RES 2 Player Cards PDF', 'author': '', 'publisher': 'Modiphius '}
+price {} found for {'human_name': 'Fallout: Wasteland Warfare - Rules of Play - PDF', 'author': '', 'publisher': 'Modiphius '}
+price {} found for {'human_name': 'Fallout: Wasteland Warfare - Print and Play: Dice and Ruler Info PDF', 'author': '', 'publisher': 'Modiphius '}
+price {} found for {'human_name': 'Fallout: Wasteland Warfare - Campaign Book - PDF', 'author': '', 'publisher': 'Modiphius '}
+price {} found for {'human_name': 'Fallout: Wasteland Warfare - Terrain Expansion: Vault Design Starter Pack STL', 'author': '', 'publisher': 'Modiphius '}
+price {} found for {'human_name': 'Fallout: Wasteland Warfare - RPG Character Sheet PDF', 'author': '', 'publisher': 'Modiphius '}
+price {} found for {'human_name': 'Fallout: Wasteland Warfare - Wave 1 AI Card Deck: Survivors, Super Mutants, Brotherhood of Steel - PDF', 'author': '', 'publisher': 'Modiphius '}
+price {} found for {'human_name': 'Fallout: Wasteland Warfare - RPG - Machine Frequency Campaign PDF', 'author': '', 'publisher': 'Modiphius '}
+price {} found for {'human_name': 'Fallout Wasteland Warfare - THE RED ROCKET MISUNDERSTANDING - PDF', 'author': '', 'publisher': 'Modiphius '}
+price {'id': 'B01DOF56L0', 'review_score': '4.7 out of 5 stars', 'price': '$9.99'} found for {'human_name': 'Trees, People, Water', 'author': '', 'publisher': ''}
+price {} found for {'human_name': 'Fallout Wasteland Warfare - Battle Mode & Force Lists PDF', 'author': '', 'publisher': 'Modiphius '}
+price {'id': 'B0B1DTTVDD', 'review_score': '4.5 out of 5 stars', 'price': '$31.72'} found for {'human_name': 'Unreal Engine 5 Character Creation, Animation, and Cinematics', 'author': 'Henk Venter Wilhelm Ogterop ', 'publisher': 'Packt '}
+price {} found for {'human_name': "Unreal Engine 5 - The Complete Beginner's Course", 'author': 'David Nixon ', 'publisher': 'Packt '}
+price {} found for {'human_name': 'Unreal Engine: Ultimate Survival Horror Course', 'author': 'Aidan Travis ', 'publisher': 'Packt '}
+price {'id': 'B09NPCF8P9', 'review_score': '4.3 out of 5 stars', 'price': '$31.72'} found for {'human_name': 'Blueprints Visual Scripting for Unreal Engine 5', 'author': 'Marcos Romero Brenden Sewell Luis Cataldi ', 'publisher': 'Packt '}
+price {} found for {'human_name': 'Unreal Engine 5 - Endless Runner', 'author': 'Aidan Travis ', 'publisher': 'Packt '}
+price {} found for {'human_name': 'Save the Children', 'author': 'savethechildren.org ', 'publisher': ''}
+price {} found for {'human_name': 'Brink: Books 1-5', 'author': 'Dan Abnett I.N.J. Culbard ', 'publisher': 'Rebellion '}
+price {} found for {'human_name': 'Slaine: The Treasures Of Britain', 'author': 'Pat Mills Dermot Power Stephen Tappin ', 'publisher': 'Rebellion '}
+price {} found for {'human_name': 'Devlin Waugh: Red Tide', 'author': 'John Smith Colin MacNeil John Burns Peter Doherty Sean Philips ', 'publisher': 'Rebellion '}
+price {} found for {'human_name': 'Nikolai Dante: Too Cool to Kill', 'author': 'Robbie Morrison Charlie Adlard Simon Fraser Henry Flint Chris Weston ', 'publisher': 'Rebellion '}
+price {} found for {'human_name': 'Cancer Research UK', 'author': 'www.cancerresearchuk.org ', 'publisher': ''}
+price {} found for {'human_name': 'Nikolai Dante: Sword of the Tsar', 'author': 'Robbie Morrison John Burns Simon Fraser ', 'publisher': 'Rebellion '}
+price {'id': '8372987718', 'review_score': 'Review score not available', 'price': ''} found for {'human_name': 'Nikolai Dante: Amerika', 'author': 'Robbie Morrison John Burns Simon Fraser Paul Marshall ', 'publisher': 'Rebellion '}
+price {} found for {'human_name': 'Slaine: The Brutania Chronicles Books One to Four', 'author': 'Pat Mills Simon Davis ', 'publisher': 'Rebellion '}
+price {'id': '8324709673', 'review_score': 'Review score not available', 'price': ''} found for {'human_name': 'Nikolai Dante: Sympathy for the Devil', 'author': 'Robbie Morrison John Burns Simon Fraser ', 'publisher': 'Rebellion '}
+price {'id': '8375101974', 'review_score': '5.0 out of 5 stars', 'price': ''} found for {'human_name': 'Nikolai Dante: The Great Game', 'author': 'Robbie Morrison Charlie Adlard Simon Fraser Andy Clarke ', 'publisher': 'Rebellion '}
+price {} found for {'human_name': 'Nikolai Dante: Tsar Wars - Volumes #1-2', 'author': 'Robbie Morrison John Burns Simon Fraser Steve Yeowell ', 'publisher': 'Rebellion '}
+
+for 109 book the stats are:
+success: 64
+success, but no price: 33
+success with price: 31
+failure: 45

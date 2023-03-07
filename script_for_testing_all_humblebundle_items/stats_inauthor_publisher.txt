@@ -1,0 +1,33 @@
+price {'id': 'B09B1MM2SS', 'review_score': '5.0 out of 5 stars', 'price': '$52.99'} found for {'human_name': 'Dive Into Systems', 'author': 'Suzanne J. Matthews Tia Newhall Kevin C. Webb ', 'publisher': 'No Starch Press '}
+price {'id': '1593271190', 'review_score': '4.4 out of 5 stars', 'price': '$26.99'} found for {'human_name': 'Code Craft', 'author': 'Pete Goodliffe ', 'publisher': 'No Starch Press '}
+price {'id': '1593274351', 'review_score': '4.7 out of 5 stars', 'price': '$29.99'} found for {'human_name': 'Learn you some Erlang for Great Good!', 'author': 'Fred Hebert ', 'publisher': 'No Starch Press '}
+price {'id': '1718501048', 'review_score': '4.6 out of 5 stars', 'price': '$29.99'} found for {'human_name': 'Effective C', 'author': 'Robert C. Seacord ', 'publisher': 'No Starch Press '}
+price {'id': 'B09BKL3V69', 'review_score': '4.6 out of 5 stars', 'price': '$17.99'} found for {'human_name': 'The Art of Clean Code', 'author': 'Christian Mayer ', 'publisher': 'No Starch Press '}
+price {'id': '1718500807', 'review_score': '4.7 out of 5 stars', 'price': '$29.99'} found for {'human_name': 'Algorithmic Thinking', 'author': 'Daniel Zingaro ', 'publisher': 'No Starch Press '}
+price {'id': '1593272073', 'review_score': '3.9 out of 5 stars', 'price': '$35.99'} found for {'human_name': 'Write Great Code, Volume 1: Understanding the Machine', 'author': 'Randall Hyde ', 'publisher': 'No Starch Press '}
+price {'id': '1593278888', 'review_score': '4.7 out of 5 stars', 'price': '$35.99'} found for {'human_name': 'C++ Crash Course', 'author': 'Josh Lospinoso ', 'publisher': 'No Starch Press '}
+price {'id': 'B07PZ4DSBD', 'review_score': '4.6 out of 5 stars', 'price': '$35.99'} found for {'human_name': 'Introduction to Computer Organization', 'author': ' Robert G. Plantz ', 'publisher': 'No Starch Press '}
+price {'id': 'B09WJYH4KL', 'review_score': '5.0 out of 5 stars', 'price': '$21.99'} found for {'human_name': 'Data Structures the Fun Way', 'author': 'Jeremy Kubica ', 'publisher': 'No Starch Press '}
+price {'id': '1718500386', 'review_score': '4.9 out of 5 stars', 'price': '$29.99'} found for {'human_name': 'Write Great Code, Volume 2: Thinking Low-Level, Writing High-Level', 'author': 'Randall Hyde ', 'publisher': 'No Starch Press '}
+price {'id': 'B084FM5LQ5', 'review_score': '4.8 out of 5 stars', 'price': '$23.99'} found for {'human_name': 'How Computers Really Work', 'author': 'Matthew Justice ', 'publisher': 'No Starch Press '}
+price {'id': 'B09BKL34VL', 'review_score': '5.0 out of 5 stars', 'price': '$23.99'} found for {'human_name': 'The Recursive Book of Recursion', 'author': 'Al Sweigart ', 'publisher': 'No Starch Press '}
+price {'id': '1593275919', 'review_score': '4.6 out of 5 stars', 'price': '$23.99'} found for {'human_name': 'Clojure for the Brave and True', 'author': 'Daniel Higginbotham ', 'publisher': 'No Starch Press '}
+price {'id': 'B07J4CST2Z', 'review_score': '4.7 out of 5 stars', 'price': '$29.99'} found for {'human_name': 'Write Great Code, Volume 3: Engineering Software', 'author': 'Randall Hyde ', 'publisher': 'No Starch Press '}
+price {'id': '1718500823', 'review_score': '3.9 out of 5 stars', 'price': '$29.99'} found for {'human_name': 'Racket Programming the Fun Way', 'author': 'James W. Stelly ', 'publisher': 'No Starch Press '}
+price {'id': '1593274246', 'review_score': '4.7 out of 5 stars', 'price': '$20.99'} found for {'human_name': 'Think Like a Programmer', 'author': 'V. Anton Spraul ', 'publisher': 'No Starch Press '}
+price {'id': '1593272073', 'review_score': '3.9 out of 5 stars', 'price': '$35.99'} found for {'human_name': 'The Art of 64-Bit Assembly, Volume 1', 'author': 'Randall Hyde ', 'publisher': 'No Starch Press '}
+price {'id': 'B00TZ006SM', 'review_score': '4.7 out of 5 stars', 'price': '$10.99'} found for {'human_name': 'ElfQuest: The Final Quest Volume 4', 'author': 'Richard Pini, Wendy Pini ', 'publisher': 'Dark Horse '}
+price {'id': 'B00TZ006SM', 'review_score': '4.7 out of 5 stars', 'price': '$10.99'} found for {'human_name': 'ElfQuest: The Final Quest Volume 2', 'author': 'Richard Pini, Wendy Pini ', 'publisher': 'Dark Horse '}
+price {'id': '150670607X', 'review_score': '4.8 out of 5 stars', 'price': '$12.99'} found for {'human_name': 'The Complete ElfQuest Volume 6', 'author': 'Richard Pini, Wendy Pini ', 'publisher': 'Dark Horse '}
+price {'id': 'B00TZ006SM', 'review_score': '4.7 out of 5 stars', 'price': '$10.99'} found for {'human_name': 'Elfquest: The Final Quest Volume 1', 'author': 'Richard Pini, Wendy Pini ', 'publisher': 'Dark Horse '}
+price {'id': 'B07NTYP4FZ', 'review_score': '4.8 out of 5 stars', 'price': '$12.99'} found for {'human_name': 'The Complete Elfquest Volume 2', 'author': 'Richard Pini, Wendy Pini ', 'publisher': 'Dark Horse '}
+price {'id': 'B07TBXJT3M', 'review_score': '4.8 out of 5 stars', 'price': '$12.99'} found for {'human_name': 'The Complete ElfQuest Volume 7', 'author': 'Richard Pini, Wendy Pini ', 'publisher': 'Dark Horse '}
+price {'id': 'B07D23WFYQ', 'review_score': '4.8 out of 5 stars', 'price': '$12.99'} found for {'human_name': 'The Complete ElfQuest Volume 5', 'author': 'Richard Pini, Wendy Pini ', 'publisher': 'Dark Horse '}
+price {'id': 'B07NTYP4FZ', 'review_score': '4.8 out of 5 stars', 'price': '$12.99'} found for {'human_name': 'The Complete ElfQuest Volume 4', 'author': 'Richard Pini, Wendy Pini ', 'publisher': 'Dark Horse '}
+price {'id': 'B01DOF56L0', 'review_score': '4.7 out of 5 stars', 'price': '$9.99'} found for {'human_name': 'Trees, People, Water', 'author': '', 'publisher': ''}
+
+for 109 book the stats are:
+success: 27
+success, but no price: 0
+success with price: 27
+failure: 82

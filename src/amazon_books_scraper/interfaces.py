@@ -14,23 +14,6 @@ AMAZON_SEARCH_URL = 'https://www.amazon.com/s'
 GOOGLE_BOOKS_URL = 'https://www.googleapis.com/books/v1/volumes'
 
 
-# def get_amazon_product_info(search_name: str, book_type: BookType, human_name: str) -> dict:
-#     params = {
-#         'k': search_name,
-#         'rh': 'n%3A283155',
-#     }
-#     headers = {
-#         'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:105.0) Gecko/20100101 Firefox/105.0',
-#         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
-#         'Accept-Language': 'en-US,en;q=0.5',
-#         'referer': 'https://google.com',
-#     }
-#     response = requests.get(url=AMAZON_SEARCH_URL, params=params, headers=headers)
-#     print(f'got amazon response with code {response.status_code}')
-#     product_info = scrape_product_info_from_amazon_search(response, book_type, human_name)
-#     return product_info
-
-
 def get_amazon_product_info(isbn: str, book_type: BookType) -> dict:
     url = 'https://www.amazon.com/advanced-search/books'
     options = Options()
@@ -60,8 +43,18 @@ def get_amazon_product_info(isbn: str, book_type: BookType) -> dict:
     return product_info
 
 
+def get_query_params(human_name: str, author: str, publisher: str):
+    res = human_name
+    if author:
+        res += f'+{author.replace(" ", "+")}'
+    if publisher:
+        res += f'+{publisher.replace(" ", "+")}'
+    return res
+
+
 def get_isbn(human_name: str, author: str, publisher: str):
-    response = requests.get(GOOGLE_BOOKS_URL, params={'q': human_name})
+    params = get_query_params(human_name=human_name, publisher=publisher, author=author)
+    response = requests.get(GOOGLE_BOOKS_URL, params={'q': params})
     books = json.loads(response.text)['items']
     isbn = ''
     if books:

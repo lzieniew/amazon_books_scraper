@@ -20,8 +20,7 @@ def test_get_book_price_unity_ai():
     author = 'Dr. Davide Aversa'
     publisher = 'packt'
     price = get_book_price(human_name=book_name, author=author, publisher=publisher, book_type=BookType.EBOOK)
-    # price changed in time, and I don't want to change the parametrization to consider it
-    assert price['price'] == '$18.49' or price['price'] == '$19.79'
+    assert price['price'] == '$18.49'
 
 
 def test_get_book_price_kindle_not_first_in_string():
