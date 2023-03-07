@@ -2,7 +2,7 @@ import json
 import time
 
 import requests
-from selenium import webdriver
+from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
@@ -21,15 +21,11 @@ def get_amazon_product_info(isbn: str, book_type: BookType) -> dict:
         '--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3')
     options.add_argument('--headless')
     options.add_argument('--disable-gpu')
-    driver = webdriver.Chrome(options=options)
+    driver = Chrome(options=options)
 
     # make the request and wait for the page to load
     driver.get(url)
     driver.implicitly_wait(10)
-    # time.sleep(0.5)
-
-    # extract the page source
-    page_source = driver.page_source
 
     form = driver.find_element(By.CSS_SELECTOR, 'form[action="/s/ref=sr_adv_b/"]')
     isbn_text_field = form.find_element(By.ID, 'field-isbn')
@@ -46,9 +42,9 @@ def get_amazon_product_info(isbn: str, book_type: BookType) -> dict:
 def get_query_params(human_name: str, author: str, publisher: str):
     res = human_name
     if author:
-        res += f'+{author.replace(" ", "+")}'
+        res += f' {author}'
     if publisher:
-        res += f'+{publisher.replace(" ", "+")}'
+        res += f' {publisher}'
     return res
 
 

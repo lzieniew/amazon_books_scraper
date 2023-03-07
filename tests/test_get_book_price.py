@@ -78,3 +78,20 @@ def test_etextbook():
     book_name = 'Write Great Code, Volume 1: Understanding the Machine'
     price = get_book_price(book_name)
     assert price['price'] == '$29.99'
+
+
+def test_write_great_code():
+    book_name = 'Write Great Code, Volume 1: Understanding the Machine'
+    author = 'Randall Hyde'
+    publisher = 'No Starch Press'
+    price = get_book_price(human_name=book_name, author=author, publisher=publisher)
+    assert price['price'] == '$29.99'
+
+
+def test_slaine():
+    book_name = 'Slaine: Time Killer'
+    # author = 'Pat Mills Massimo Belardinelli Glenn Fabry David Pugh Bryan Talbot'
+    author = 'Pat Mills Massimo Belardinelli Glenn Fabry David Pugh Bryan Talbot'
+    publisher = 'Rebellion'
+    price = get_book_price(human_name=book_name, author=author, publisher=publisher)
+    assert price['price'] != ''
