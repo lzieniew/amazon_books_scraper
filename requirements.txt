@@ -1,6 +1,5 @@
 beautifulsoup4~=4.11.1
 requests~=2.27.1
-fuzzywuzzy~=0.18.0
 python-Levenshtein~=0.20.9
 selenium-requests
 

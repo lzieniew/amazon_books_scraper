@@ -1,7 +1,6 @@
 import re
 
 from bs4 import BeautifulSoup, ResultSet, Tag
-from fuzzywuzzy import fuzz
 
 from src.amazon_books_scraper.enums import BookType
 
