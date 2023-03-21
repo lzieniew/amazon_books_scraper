@@ -1,10 +1,7 @@
 beautifulsoup4~=4.11.1
 requests~=2.27.1
-python-Levenshtein~=0.20.9
-selenium-requests
+seleniumbase
 
 #test
 pytest~=7.2.1
 pytest-xdist~=3.1.0
-pytest-recording==0.12.1
-seleniumbase
