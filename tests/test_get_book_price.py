@@ -20,7 +20,7 @@ def test_get_book_price_unity_ai():
     author = 'Dr. Davide Aversa'
     publisher = 'packt'
     price = get_book_price(human_name=book_name, author=author, publisher=publisher, book_type=BookType.EBOOK)
-    assert price['price'] == '$18.49'
+    assert price['price'] == '$19.14'
 
 def test_get_book_price_kindle_not_first_in_string():
     book_name = 'Bible 101'
@@ -34,6 +34,14 @@ def test_get_book_price_audible_audiobook():
     author = 'Stephen King'
     price = get_book_price(human_name=book_name, author=author, book_type=BookType.AUDIOBOOK)
     assert price['price'] == '$20.42'
+
+
+def test_get_book_price_audible_audiobook_check_multiple_isbns():
+    book_name = 'Boundaries: When To Say Yes, How to Say No'
+    author = 'Henry Cloud'
+    price = get_book_price(human_name=book_name, author=author, book_type=BookType.AUDIOBOOK)
+    assert price['price'] == '$17.39'
+
 
 def test_get_not_found_book():
     book_name = 'Pathfinder Adventure Path: Abomination Vaults'
@@ -71,7 +79,7 @@ def test_find_dive_into_systems():
 def test_no_book_for_isbn():
     book_name = 'Write Great Code, Volume 1: Understanding the Machine'
     price = get_book_price(book_name)
-    assert price == {}
+    assert price['price'] == '$29.99'
 
 def test_write_great_code():
     book_name = 'Write Great Code, Volume 1: Understanding the Machine'

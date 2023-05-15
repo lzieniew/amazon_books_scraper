@@ -1,5 +1,3 @@
-
-
 def get_first_n_words(input: str, n: int) -> str:
     return ' '.join(input.split()[:n])
 

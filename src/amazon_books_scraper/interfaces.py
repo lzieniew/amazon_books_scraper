@@ -13,6 +13,7 @@ from src.amazon_books_scraper.services import strip_author_string
 
 AMAZON_SEARCH_URL = 'https://www.amazon.com/s'
 GOOGLE_BOOKS_URL = 'https://www.googleapis.com/books/v1/volumes'
+HOW_MUCH_ISBNS_TO_CHECK = 3
 
 
 def get_amazon_product_info(isbn: str, book_type: BookType):
@@ -52,18 +53,21 @@ def get_query_params(human_name: str, author: str, publisher: str) -> str:
     return full_name
 
 
-def get_isbn(human_name: str, author: str, publisher: str):
+def get_isbns(human_name: str, author: str, publisher: str):
     params = get_query_params(human_name=human_name, publisher=publisher, author=author)
     response = requests.get(GOOGLE_BOOKS_URL, params={'q': params})
     json_resp = json.loads(response.text)
     if not 'items' in json_resp:
         return ''
     books = json_resp['items']
-    isbn = ''
-    if books:
-        isbns = books[0]['volumeInfo']['industryIdentifiers']
-        for isbn in books[0]['volumeInfo']['industryIdentifiers']:
+    result_isbns = []
+    for book in books[:HOW_MUCH_ISBNS_TO_CHECK]:
+        result_isbn = ''
+        isbns = book['volumeInfo']['industryIdentifiers']
+        for isbn in isbns:
             if isbn['type'] == 'ISBN_13':
-                return isbn['identifier']
-        isbn = isbns[0]['identifier']
-    return isbn
+                result_isbn = isbn['identifier']
+        if not result_isbn:
+            result_isbn = isbns[0]['identifier']
+        result_isbns.append(result_isbn)
+    return result_isbns
